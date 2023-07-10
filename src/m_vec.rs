@@ -38,3 +38,9 @@ impl<T> MVec<T> {
         self.count += 1;
     }
 }
+
+impl<T> Drop for MVec<T> {
+    fn drop(&mut self) {
+        unsafe { free(self.values as *mut c_void); }
+    }
+}
