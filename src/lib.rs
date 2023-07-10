@@ -68,4 +68,19 @@ mod tests {
             "Rust".to_string(),
         ]);
     }
+
+    use rand::Rng;
+    #[test]
+    fn test_abunch_of_alocations() {
+        let mut v: MVec<i32> = MVec::new();
+        let mut rng = rand::thread_rng();
+        for _ in 0..rng.gen_range(200..=10000) {
+            v.add(rng.gen());
+        }
+
+    }
+
+
+   
+
 }
