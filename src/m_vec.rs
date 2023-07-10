@@ -3,10 +3,10 @@ use std::{mem::size_of, ptr::{null, self}, ffi::c_void};
 
 use libc::{malloc, free};
 
-struct MVec<T> {
-    values: *mut T,
-    count: usize,
-    capacity: usize
+pub struct MVec<T> {
+    pub values: *mut T,
+    pub count: usize,
+    pub capacity: usize
 }
 
 impl<T> MVec<T> {
